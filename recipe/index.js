@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import OpenAI from "openai";
 
+const PORT = process.env.PORT || 3000;
 dotenv.config({ quiet: true });
 const app = express();
 app.use(cors({ origin: "http://localhost:5173" }));
@@ -40,6 +41,6 @@ Please write a recipe with a title, ingredients list, and step-by-step instructi
   }
 });
 
-app.listen(3000, () =>
-  console.log("🚀 Server running on http://localhost:3000")
+app.listen(PORT, () =>
+  console.log("🚀 Server running on http://localhost:${PORT}")
 );
