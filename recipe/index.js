@@ -14,9 +14,6 @@ app.use(
   })
 );
 
-// Explicitly handle preflight requests
-app.options("/get-recipe", cors());
-
 app.use(express.json());
 
 const openai = new OpenAI({
@@ -52,5 +49,5 @@ Please write a recipe with a title, ingredients list, and step-by-step instructi
 });
 
 app.listen(PORT, () =>
-  console.log("🚀 Server running on http://localhost:${PORT}")
+  console.log(`🚀 Server running on http://localhost:${PORT}`)
 );
