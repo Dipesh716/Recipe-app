@@ -8,10 +8,14 @@ dotenv.config({ quiet: true });
 const app = express();
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://recipe-app-rgb2.onrender.com"],
+    origin: "https://recipe-app-rgb2.onrender.com", // or add localhost for dev
     credentials: true,
+    methods: ["GET", "POST", "OPTIONS"], // important
   })
 );
+
+// Explicitly handle preflight requests
+app.options("/get-recipe", cors());
 
 app.use(express.json());
 
