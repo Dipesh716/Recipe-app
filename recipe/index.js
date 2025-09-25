@@ -6,7 +6,12 @@ import OpenAI from "openai";
 const PORT = process.env.PORT || 3000;
 dotenv.config({ quiet: true });
 const app = express();
-app.options("*", cors({ origin: "https://recipe-app-rgb2.onrender.com" }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://recipe-app-rgb2.onrender.com"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
