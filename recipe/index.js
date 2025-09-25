@@ -9,6 +9,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173", // dev
+  "https://recipe-app-olive-six.vercel.app",
   "https://recipe-app-rgb2.onrender.com", // prod
 ];
 
