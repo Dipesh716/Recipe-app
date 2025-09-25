@@ -6,11 +6,22 @@ import OpenAI from "openai";
 const PORT = process.env.PORT || 3000;
 dotenv.config({ quiet: true });
 const app = express();
+const allowedOrigins = [
+  "http://localhost:5173", // dev
+  "https://recipe-app-rgb2.onrender.com", // prod
+];
+
 app.use(
   cors({
-    origin: "https://recipe-app-rgb2.onrender.com", // or add localhost for dev
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
-    methods: ["GET", "POST", "OPTIONS"], // important
+    methods: ["GET", "POST", "OPTIONS"],
   })
 );
 
@@ -22,7 +33,7 @@ const openai = new OpenAI({
 
 app.post("/get-recipe", async (req, res) => {
   const { ingredients } = req.body;
-
+  res.json({ recipe: "Test recipe" });
   if (!ingredients || !Array.isArray(ingredients)) {
     return res.status(400).json({ error: "Ingredients must be an array" });
   }
