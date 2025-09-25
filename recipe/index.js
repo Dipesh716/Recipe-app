@@ -33,7 +33,7 @@ const openai = new OpenAI({
 
 app.post("/get-recipe", async (req, res) => {
   const { ingredients } = req.body;
-  res.json({ recipe: "Test recipe" });
+
   if (!ingredients || !Array.isArray(ingredients)) {
     return res.status(400).json({ error: "Ingredients must be an array" });
   }
