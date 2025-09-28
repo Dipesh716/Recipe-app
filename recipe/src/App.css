@@ -53,13 +53,13 @@ main {
   border-radius: 12px;
   border: 1px solid #ddd;
   width: 100%;
-  max-width: 285px;
 }
 .output_form > button {
   padding: 9px 16px 9px 16px;
   border-radius: 10px;
   background-color: orange;
   color: #fff;
+  min-width: 80px;
   font-weight: 500;
   border: 1px solid #ddd;
 }
@@ -108,12 +108,21 @@ ul.ingredients-list > li {
 
 .suggested-recipe-container {
   color: #475467;
-  line-height: 28px;
-  font-size: 1.125rem;
+  line-height: 30px;
+  font-size: 1rem;
   font-weight: 400;
 }
 
 .suggested-recipe-container ul li,
 .suggested-recipe-container ol li {
   margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 450px) {
+  .center {
+    padding: 20px;
+  }
+  main {
+    padding: 20px;
+  }
 }

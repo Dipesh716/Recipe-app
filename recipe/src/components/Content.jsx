@@ -11,7 +11,7 @@ export default function Content() {
 
   async function getRecipe() {
     setLoading(true);
-    const recipeMarkdown = await getRecipeFromGpt(ingredients); // ✅ await the Promise
+    const recipeMarkdown = await getRecipeFromGpt(ingredients);
     setRecipe(recipeMarkdown);
     setLoading(false);
   }

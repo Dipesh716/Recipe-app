@@ -6,14 +6,12 @@ import OpenAI from "openai";
 const PORT = process.env.PORT || 3000;
 dotenv.config({ quiet: true });
 const app = express();
-
 const allowedOrigins = [
   "http://localhost:5173", // dev
   "https://recipe-app-olive-six.vercel.app",
   "https://recipe-app-rgb2.onrender.com", // prod
 ];
 
-// Apply CORS middleware
 app.use(
   cors({
     origin: function (origin, callback) {
