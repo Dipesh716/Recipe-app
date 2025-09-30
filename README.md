@@ -2,6 +2,8 @@
 
 A Recipe Generator webpage where users can enter ingredients and get ai-generated recipes from OpenAi API, Frontend is React JS(Vite) and Backend used is Express JS.
 
+Add ingredients one by one. After a few inputs, a button will appear. The user can generate them by clicking on the button.
+
 ## Techs ->
   Frontend
   - React JS (Vite)
