@@ -25,7 +25,11 @@ export default function Content() {
     <>
       <main>
         <form className="output_form" action={addIngredient}>
-          <input type="text" placeholder="Add ingredients" name="ingredient" />
+          <input
+            type="text"
+            placeholder="Add ingredient one by one"
+            name="ingredient"
+          />
           <button>+ Add</button>
         </form>
         {ingredients.length > 0 && (
